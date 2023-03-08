@@ -19,16 +19,19 @@
 				<i class="fas fa-chevron-circle-left back-btn"></i>
 			</a>
 			<div class="hero-info">
-				<h1 class="name">Sudip Gautam</h1>
-				<p class="relationship-hero">Friend</p>
+				<h1 class="name">{{object.full_name}}</h1>
+				<p class="relationship-hero">{{object.relationship}}</p>
 			</div>
 		</header>
 
 		<section class="delete-container">
 			<p>Are you sure you want to delete this contact?</p>
+		<a href="{% url 'deleteprofilebyid' pk=object.id %}">
 			<div class="delete-contact">
 				<i class="fas fa-trash delete-icon"></i>
 				<button class="delete-button">Delete Contact</button>
+			</a>
+			
 			</div>
 		</section>
 	</div>

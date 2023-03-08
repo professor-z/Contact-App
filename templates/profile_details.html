@@ -53,7 +53,8 @@
 			</div>
 		</section>
 
-		<a href="http://localhost:8000/edit_contact/">
+		<a href="{% url 'editprofile' pk=object.id %}">
+			
 			<section class="edit-contact">
 				<div class="edit-button">
 					<i class="fas fa-cog icon-gradient"></i>

@@ -61,15 +61,15 @@
     <body>
         <center><h1>Login Form
         </h1></center>
-        <form action="" method="post">
+        <form method="post" autocomplete="off">
             {% csrf_token %}
             <!-- {% load static %} -->
             <center><div class="container">
                 <div class="imgcontainer">
                     <img src="{% static 'avatar_img1.png' %}" alt="Avatar" class="avatar">
                 </div>
-                <input type="email" placeholder="Enter Gmail" name="email" float="right"  required><br>
-                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <input value="" type="email" placeholder="Enter Gmail" name="email" float="right" autocomplete="off" required><br>
+                <input value="" type="password" placeholder="Enter Password" name="password" autocomplete="off" required><br>  
                 <button type="submit"><b>Login</b></button><br><br> 
                 Don't have Account <br> <a href="http://localhost:8000/signup/"> Register </a>
             </div></center>

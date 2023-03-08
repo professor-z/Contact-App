@@ -21,59 +21,59 @@
 			</a>
 
 			<div class="hero-info">
-				<h1 class="name">Sudip Gautam</h1>
-				<p class="relationship-hero">Friend</p>
+				<h1 class="name">{{object.full_name}}</h1>
+				<p class="relationship-hero">{{object.relationship}}</p>
 			</div>
 		</header>
+		<form method="post">
+		{%csrf_token%}
 
 		<section class="contact-info">
 
 			<div class="info-line">
 				<i class="fas fa-phone icon-gradient"></i>
-				<input type="text" class="type" name="fullname" placeholder="Full Name">
+				<input type="text" class="type" name="fullname" placeholder="Full Name" value={{object.full_name}}>
 			</div>
 
 			<div class="info-line">
 				<i class="fas fa-user-circle icon-gradient"></i>
-				<input type="text" class="type" name="relationship" placeholder="Relationship">
+				<input type="text" class="type" name="relationship" placeholder="Relationship" value={{object.relationship}}>
 			</div>
 
 		
 
 			<div class="info-line">
 				<i class="fas fa-sms icon-gradient"></i>
-				<input type="text" class="type" name="phone-number" placeholder="Phone Number">
+				<input type="text" class="type" name="phone-number" placeholder="Phone Number" value={{object.phone_number}}>
 			</div>
 
 			
 
 			<div  class="info-line">
 				<i class="fas fa-envelope icon-gradient"></i>
-				<input type="text" class="type" name="e-mail" placeholder="Email">
+				<input type="text" class="type" name="email" placeholder="Email" value={{object.email}}>
 			</div>
 
 			
 
 			<div class="info-line">
 				<i class="fas fa-map-marker-alt icon-gradient location"></i>
-				<input type="text" class="type" name="address" placeholder="Address">
+				<input type="text" class="type" name="address" placeholder="Address" value={{object.address}}>
 			</div>
 			
-			<div class="info-line">
-				<i class="fas fa-map-marker-alt icon-gradient location"></i>
-				<input type="text" class="type" name="email" placeholder="Email">
-			</div>
+		
 		</section>
 
 		<section class="button-container">
 			<div class="update-contact">
 				<i  class="fas fa-check-circle icon-gradient"></i>
-				<button class="button">Save Contact</button>
+				<input class="button" type="submit" value="Save Contact"/>
 			</div>
 		</section>
+		</form>
 
 		<section class="button-container">
-			<a href="http://localhost:8000/delete/">
+			<a href="{% url 'deleteprofile' pk=object.id %}">
 				<div class="update-contact">
 					<i class="fas fa-trash icon-gradient"></i>
 					<button class="button">Delete Contact</button>
